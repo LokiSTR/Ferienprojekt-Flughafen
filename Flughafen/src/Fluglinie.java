@@ -1,4 +1,7 @@
 public class Fluglinie {
+    //Deklaration des Arrays
+    static Airline[] _airlines;
+
     //Deklaration der Klassenvariablen
     String _fluglinienname;
     Airline _name;
@@ -17,5 +20,10 @@ public class Fluglinie {
     }
     public Airline getName() {
         return _name;
+    }
+
+    //Ermöglicht das Array
+    public static Airline[] getAllAirlines(){
+        return _airlines;
     }
 }

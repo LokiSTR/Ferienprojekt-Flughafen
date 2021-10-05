@@ -1,4 +1,7 @@
 public class Terminal {
+    //Deklaration des Arrays
+    static Airline[] _airlines;
+
     //Deklaration der Klassenvariablen
     String _name;
     Airline _airline;
@@ -17,5 +20,10 @@ public class Terminal {
     }
     public String getName() {
         return _name;
+    }
+
+    //Ermöglicht das Array
+    public static Airline[] getAllAirlines(){
+        return _airlines;
     }
 }
