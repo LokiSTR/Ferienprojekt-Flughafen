@@ -1,6 +1,6 @@
 public class Fluglinie {
     //Deklaration des Arrays
-    static Airline[] _airlines;
+    static Airline[] _airline;
 
     //Deklaration der Klassenvariablen
     String _fluglinienname;
@@ -30,6 +30,6 @@ public class Fluglinie {
 
     //Ermöglicht das Array
     public static Airline[] getAllAirlines(){
-        return _airlines;
+        return _airline;
     }
 }
