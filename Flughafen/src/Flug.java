@@ -4,11 +4,12 @@ import java.util.Scanner;
 //Eigene Klassse, Prämisse 1) static loswerden, 2) Ändern leichter
 public class Flug {
     
-    static Fluglinie[] _fluglinie;
     static Flugzeug[] _flugzeug;
+    static Fluglinie[] _fluglinie;
     static Pilot[] _piloten;
     static Passagier[] _passagiere;
     static Bahn[] _bahn; 
+    String _startzeit;
 
     public Scanner _scanner;
 
@@ -28,6 +29,12 @@ public class Flug {
     }
 
     //Ermöglicht das Array
+    public static Flugzeug[] getAllFlugzeuge(){
+        return _flugzeug;
+    }
+    public static Fluglinie[] getAllFluglinien(){
+        return _fluglinie;
+    }
     public static Pilot[] getAllPiloten(){
         return _piloten;
     }
@@ -37,10 +44,14 @@ public class Flug {
     public static Bahn[] getAllBahnen(){
         return _bahn;
     }
-    public static Fluglinie[] getAllFluglinien(){
-        return _fluglinie;
+    
+    //Setter
+    public void setStartzeit(String startzeit){
+        this._startzeit = startzeit;
     }
-    public static Flugzeug[] getAllFlugzeuge(){
-        return _flugzeug;
+    //Getter
+    public String getStartzeit() {
+        return _startzeit;
     }
+    
 }
