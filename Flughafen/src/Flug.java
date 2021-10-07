@@ -4,6 +4,8 @@ import java.util.Scanner;
 //Eigene Klassse, Prämisse 1) static loswerden, 2) Ändern leichter
 public class Flug {
     
+    static Fluglinie[] _fluglinie;
+    static Flugzeug[] _flugzeug;
     static Pilot[] _piloten;
     static Passagier[] _passagiere;
     static Bahn[] _bahn; 
@@ -34,5 +36,11 @@ public class Flug {
     }
     public static Bahn[] getAllBahnen(){
         return _bahn;
+    }
+    public static Fluglinie[] getAllFluglinien(){
+        return _fluglinie;
+    }
+    public static Flugzeug[] getAllFlugzeuge(){
+        return _flugzeug;
     }
 }
