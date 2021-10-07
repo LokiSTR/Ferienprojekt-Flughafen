@@ -138,6 +138,20 @@ public class App {
         _passagier[7] = new Passagier("Julian", "Schlosser");
         _passagier[8] = new Passagier("Hulio", "Schlosser");
 
-        //TODO: Terminal, Pilot => nach dem essen
+        _pilot = new Pilot[20];
+        _pilot[0] = new Pilot("Abdul", "Abudallah");
+        _pilot[0] = new Pilot("Ibrahim", "Jasalame");
+        _pilot[0] = new Pilot("Günther", "Jauch");
+        _pilot[0] = new Pilot("Leonardo", "Dexter");
+        _pilot[0] = new Pilot("Loki", "Stormbringer");
+        _pilot[0] = new Pilot("Sarah", "Schatte");
+
+        _terminal = new Terminal[15];
+        _terminal[0] = new Terminal("(1) Tarek");
+        _terminal[0] = new Terminal("(2) Oktavian");
+        _terminal[0] = new Terminal("(3) Brutus");
+        _terminal[0] = new Terminal("(4) Titus");
+        _terminal[0] = new Terminal("(5) Ceasar");
+        
     }
 }
