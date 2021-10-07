@@ -7,7 +7,7 @@ public class Flughafen {
     String _name;
     String _standort;
 
-    //Constructor
+    //Konstruktor
     public Flughafen(String name, String standort){
         this.setName(name);
         this.setStandort(standort);

@@ -3,6 +3,12 @@ public class Pilot {
     String _vorname;
     String _nachname;
 
+    //Konstruktor
+    public Pilot(String vorname, String nachname){
+        this.setVorname(vorname);
+        this.setNachname(nachname);
+    }
+
     //Setter
     public void setVorname(String vorname) {
         this._vorname = vorname;

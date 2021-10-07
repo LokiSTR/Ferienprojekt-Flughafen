@@ -6,6 +6,11 @@ public class Terminal {
     String _name;
     Airline _airline;
 
+    //Konstruktor
+    public Terminal(String name){
+        this.setName(name);
+    }
+
     //Setter
     public void setAirline(Airline airline) {
         this._airline = airline;

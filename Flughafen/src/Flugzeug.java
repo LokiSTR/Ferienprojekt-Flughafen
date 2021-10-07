@@ -6,6 +6,13 @@ public class Flugzeug {
     int _maxPassagiere;
     int _maxPiloten;
 
+    //Konstruktor
+    public Flugzeug(String hersteller, String nummer, Airline name){
+        this.setHersteller(hersteller);
+        this.setNummer(nummer);
+        this.setName(name);
+    }
+
     //Setter
     public void setNummer(String nummer) {
         this._nummer = nummer;

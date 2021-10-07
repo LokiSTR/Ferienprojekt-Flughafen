@@ -8,6 +8,11 @@ public class Airline {
     Flugzeug _flugzeug;
     Fluglinie _fluglinie;
 
+    //Constructor
+    public Airline (String name){
+        this.setName(name);
+    }
+
     //Setter
     public void setFluglinie(Fluglinie fluglinie) {
         this._fluglinie = fluglinie;
