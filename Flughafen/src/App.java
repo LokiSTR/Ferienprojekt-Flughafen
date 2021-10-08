@@ -1,6 +1,3 @@
-//import des Scanners, dadurch kann man den Datentyp Scanner nutzen, liegt daran, dass er kein elementarer Datentyp ist
-//import java.util.Scanner;
-
 public class App {
     
     //Deklaration der Arrays + Klassenvariabe
