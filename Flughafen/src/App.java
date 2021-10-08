@@ -1,5 +1,5 @@
 //import des Scanners, dadurch kann man den Datentyp Scanner nutzen, liegt daran, dass er kein elementarer Datentyp ist
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class App {
     
@@ -91,14 +91,12 @@ public class App {
 
     //Main-Methode als Einstiegspunkt des Programms
     public static void main(String[] args) throws Exception {
-        //Printout test
-        System.out.println("Hallo, liebe Informatiker!");
-        System.out.println("Hallo, liebe Informatiker!");
         
-        //Demodaten Anfang
+        //Demodaten
+
         //Deklaration der Länge der Arrays
         _airline = new Airline[25];
-        //Initialisierung der einzelnen Indizes des Arrays
+        //Initialisierung der einzelnen Eigenschaften der Arrays
         _airline [0] = new Airline("Lufthansa");
         _airline [1] = new Airline("Condor");
         _airline [2] = new Airline("Holgerson Airlines");
@@ -126,7 +124,7 @@ public class App {
         _flugzeug[3] = new Flugzeug("Fokker", "51", _airline[0]);
         _flugzeug[4] = new Flugzeug("Lockhead", "2", _airline[0]);
         _flugzeug[5] = new Flugzeug("Tupolw PSC", "66", _airline[1]);
-        
+           
         _passagier = new Passagier[150];
         _passagier[0] = new Passagier("Reiner", "Schmidt");
         _passagier[1] = new Passagier("Matilda", "Schmidt");
@@ -148,10 +146,14 @@ public class App {
 
         _terminal = new Terminal[15];
         _terminal[0] = new Terminal("(1) Tarek");
-        _terminal[0] = new Terminal("(2) Oktavian");
-        _terminal[0] = new Terminal("(3) Brutus");
-        _terminal[0] = new Terminal("(4) Titus");
-        _terminal[0] = new Terminal("(5) Ceasar");
+        _terminal[1] = new Terminal("(2) Oktavian");
+        _terminal[3] = new Terminal("(3) Brutus");
+        _terminal[4] = new Terminal("(4) Titus");
+        _terminal[5] = new Terminal("(5) Ceasar");
         
+        //Printout test
+        System.out.println("Hallo, liebe Informatiker!");
+        System.out.println("Hallo, liebe Informatiker!");
+
     }
 }
