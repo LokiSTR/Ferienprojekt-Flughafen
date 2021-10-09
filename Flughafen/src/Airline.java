@@ -17,6 +17,7 @@ public class Airline {
     public void setFluglinie(Fluglinie fluglinie) {
         this._fluglinie = fluglinie;
     }
+    
     public void setFlugzeug(Flugzeug flugzeug) {
         this._flugzeug = flugzeug;
     }

@@ -32,32 +32,6 @@ public class App {
         }
     } 
 
-    //Rückgabemethode, d.h. die Arrays vom jeweiligen Typen werden zurückgegeben => ermöglicht die arrays
-    public static Airline[] getALLAirline(){
-        return _airline;
-    }
-    public static Bahn[] getALLBahn(){
-        return _bahn;
-    }
-    public static Flughafen[] getALLFlughafen(){
-        return _flughafen;
-    }
-    public static Fluglinie[] getALLFluglinie(){
-        return _fluglinie;
-    }
-    public static Flugzeug[] getALLFlugzeug(){
-        return _flugzeug;
-    }
-    public static Passagier[] getALLPassagier(){
-        return _passagier;
-    }
-    public static Pilot[] getALLPilot(){
-        return _pilot;
-    }
-    public static Terminal[] getALLTerminal(){
-        return _terminal;
-    }
-
     //Mit AddObject Methode
     public static void addAirline(Airline airline){
         addObject(airline, getALLAirline());
@@ -82,6 +56,32 @@ public class App {
     }
     public static void addTerminal(Terminal terminal){
         addObject(terminal, getALLTerminal());
+    }
+
+    //Rückgabemethode, d.h. die Arrays vom jeweiligen Typen werden zurückgegeben => ermöglicht die arrays
+    public static Airline[] getALLAirline(){
+        return _airline;
+    }
+    public static Bahn[] getALLBahn(){
+        return _bahn;
+    }
+    public static Flughafen[] getALLFlughafen(){
+        return _flughafen;
+    }
+    public static Fluglinie[] getALLFluglinie(){
+        return _fluglinie;
+    }
+    public static Flugzeug[] getALLFlugzeug(){
+        return _flugzeug;
+    }
+    public static Passagier[] getALLPassagier(){
+        return _passagier;
+    }
+    public static Pilot[] getALLPilot(){
+        return _pilot;
+    }
+    public static Terminal[] getALLTerminal(){
+        return _terminal;
     }
 
 
@@ -135,11 +135,11 @@ public class App {
 
         _pilot = new Pilot[20];
         _pilot[0] = new Pilot("Abdul", "Abudallah");
-        _pilot[0] = new Pilot("Ibrahim", "Jasalame");
-        _pilot[0] = new Pilot("Günther", "Jauch");
-        _pilot[0] = new Pilot("Leonardo", "Dexter");
-        _pilot[0] = new Pilot("Loki", "Stormbringer");
-        _pilot[0] = new Pilot("Sarah", "Schatte");
+        _pilot[1] = new Pilot("Ibrahim", "Jasalame");
+        _pilot[2] = new Pilot("Günther", "Jauch");
+        _pilot[3] = new Pilot("Leonardo", "Dexter");
+        _pilot[4] = new Pilot("Loki", "Stormbringer");
+        _pilot[5] = new Pilot("Sarah", "Schatte");
 
         _terminal = new Terminal[15];
         _terminal[0] = new Terminal("(1) Tarek");
@@ -147,10 +147,10 @@ public class App {
         _terminal[3] = new Terminal("(3) Brutus");
         _terminal[4] = new Terminal("(4) Titus");
         _terminal[5] = new Terminal("(5) Ceasar");
-        
-        //Printout test
-        System.out.println("Hallo, liebe Informatiker!");
-        System.out.println("Hallo, liebe Informatiker!");
 
+        //Neues Objekt aus der Klasse Menu wird erstellt
+        Menu menu = new Menu();
+        //Methode wird durch Punktnotation am Objekt aufgerufen
+        menu.startMenu();
     }
 }
