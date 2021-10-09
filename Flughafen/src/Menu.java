@@ -1,5 +1,6 @@
 //import des Scanners, dadurch kann man den Datentyp Scanner nutzen, liegt daran, dass er kein elementarer Datentyp ist
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Menu {
  
@@ -64,7 +65,9 @@ public class Menu {
         for(Airline airline : App.getALLAirline()){
             //wenn diese airline nicht null ist geben wird der hersteller ausgegeben
             if(airline != null){
-                System.out.println(airline.getName() + " " + airline.getFlugzeug() + " " + airline.getFlugzeug());
+                System.out.println(airline.getName() + " " + airline.getFlugzeug());
+                System.out.println(Arrays.toString(airline.getFlugzeug()));
+
             }
         }
     }

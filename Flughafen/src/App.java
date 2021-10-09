@@ -11,80 +11,6 @@ public class App {
     static Terminal[] _terminal;
     String _startzeit;
 
-    //Setter
-    public void setStartzeit(String startzeit){
-        this._startzeit = startzeit;
-    }
-    //Getter
-    public String getStartzeit() {
-        return _startzeit;
-    }   
-
-    //Übernommen aus dem Projekt AutohausSchmidt
-    public static void addObject(Object ele, Object[] array){
-        int i = 0;
-        for (Object a :array){
-            if(a == null){
-                array[i] = ele;
-                break;
-            }
-            i = i+1;
-        }
-    } 
-
-    //Mit AddObject Methode
-    public static void addAirline(Airline airline){
-        addObject(airline, getALLAirline());
-    }
-    public static void addBahn(Bahn bahn){
-        addObject(bahn, getALLBahn());
-    }
-    public static void addFlughafen(Flughafen flughafen){
-        addObject(flughafen, getALLFlughafen());
-    }
-    public static void addFluglinie(Fluglinie fluglinie){
-        addObject(fluglinie, getALLFluglinie());
-    }
-    public static void addFlugzeug(Flugzeug flugzeug){
-        addObject(flugzeug, getALLFlugzeug());
-    }
-    public static void addPassagier(Passagier passagier){
-        addObject(passagier, getALLPassagier());
-    }
-    public static void addPilot(Pilot pilot){
-        addObject(pilot, getALLPilot());
-    }
-    public static void addTerminal(Terminal terminal){
-        addObject(terminal, getALLTerminal());
-    }
-
-    //Rückgabemethode, d.h. die Arrays vom jeweiligen Typen werden zurückgegeben => ermöglicht die arrays
-    public static Airline[] getALLAirline(){
-        return _airline;
-    }
-    public static Bahn[] getALLBahn(){
-        return _bahn;
-    }
-    public static Flughafen[] getALLFlughafen(){
-        return _flughafen;
-    }
-    public static Fluglinie[] getALLFluglinie(){
-        return _fluglinie;
-    }
-    public static Flugzeug[] getALLFlugzeug(){
-        return _flugzeug;
-    }
-    public static Passagier[] getALLPassagier(){
-        return _passagier;
-    }
-    public static Pilot[] getALLPilot(){
-        return _pilot;
-    }
-    public static Terminal[] getALLTerminal(){
-        return _terminal;
-    }
-
-
 
     //Main-Methode als Einstiegspunkt des Programms
     public static void main(String[] args) throws Exception {
@@ -153,4 +79,80 @@ public class App {
         //Methode wird durch Punktnotation am Objekt aufgerufen
         menu.startMenu();
     }
+
+    //Übernommen aus dem Projekt AutohausSchmidt
+    public static void addObject(Object ele, Object[] array){
+        int i = 0;
+        for (Object a :array){
+            if(a == null){
+                array[i] = ele;
+                break;
+            }
+            i = i+1;
+        }
+    } 
+
+    //Mit AddObject Methode
+    public static void addAirline(Airline airline){
+        addObject(airline, getALLAirline());
+    }
+    public static void addBahn(Bahn bahn){
+        addObject(bahn, getALLBahn());
+    }
+    public static void addFlughafen(Flughafen flughafen){
+        addObject(flughafen, getALLFlughafen());
+    }
+    public static void addFluglinie(Fluglinie fluglinie){
+        addObject(fluglinie, getALLFluglinie());
+    }
+    public static void addFlugzeug(Flugzeug flugzeug){
+        addObject(flugzeug, getALLFlugzeug());
+    }
+    public static void addPassagier(Passagier passagier){
+        addObject(passagier, getALLPassagier());
+    }
+    public static void addPilot(Pilot pilot){
+        addObject(pilot, getALLPilot());
+    }
+    public static void addTerminal(Terminal terminal){
+        addObject(terminal, getALLTerminal());
+    }
+
+
+    //Rückgabemethode, d.h. die Arrays vom jeweiligen Typen werden zurückgegeben => ermöglicht die arrays
+    public static Airline[] getALLAirline(){
+        return _airline;
+    }
+    public static Bahn[] getALLBahn(){
+        return _bahn;
+    }
+    public static Flughafen[] getALLFlughafen(){
+        return _flughafen;
+    }
+    public static Fluglinie[] getALLFluglinie(){
+        return _fluglinie;
+    }
+    public static Flugzeug[] getALLFlugzeug(){
+        return _flugzeug;
+    }
+    public static Passagier[] getALLPassagier(){
+        return _passagier;
+    }
+    public static Pilot[] getALLPilot(){
+        return _pilot;
+    }
+    public static Terminal[] getALLTerminal(){
+        return _terminal;
+    }
+
+
+    //Setter
+    public void setStartzeit(String startzeit){
+        this._startzeit = startzeit;
+    }
+    //Getter
+    public String getStartzeit() {
+        return _startzeit;
+    }   
+
 }
