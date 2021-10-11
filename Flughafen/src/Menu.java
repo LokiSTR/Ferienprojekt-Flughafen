@@ -1,6 +1,5 @@
 //import des Scanners, dadurch kann man den Datentyp Scanner nutzen, liegt daran, dass er kein elementarer Datentyp ist
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Menu {
  
@@ -63,11 +62,16 @@ public class Menu {
     public void showAirline(){
         //foreach schleife
         for(Airline airline : App.getALLAirline()){
+/*            for(Flugzeug flugzeug : App.getALLFlugzeug()){
+                if(flugzeug !=null){
+                    System.out.println(flugzeug.getNummer());
+                }
+            }*/
+//Würde man noch alle Flugzeuge in Airline anzeigen lassen wollen müsste man eine weiter For-Schleife hier einbauen, genau so sieht es auch mit allen anderen Sachen aus
+
             //wenn diese airline nicht null ist geben wird der hersteller ausgegeben
             if(airline != null){
-                System.out.println(airline.getName() + " " + airline.getFlugzeug());
-                System.out.println(Arrays.toString(airline.getFlugzeug()));
-
+                System.out.println(airline.getName());
             }
         }
     }
@@ -85,7 +89,7 @@ public class Menu {
         for(Fluglinie fluglinie : App.getALLFluglinie()){
             //wenn diese airline nicht null ist geben wird der hersteller ausgegeben
             if(fluglinie != null){
-                System.out.println(fluglinie.getFlugliniename() + " " + fluglinie.getName());
+                System.out.println(fluglinie.getFlugliniename());
             }
         }
     }
@@ -94,7 +98,7 @@ public class Menu {
         for(Flugzeug flugzeug : App.getALLFlugzeug()){
             //wenn diese airline nicht null ist geben wird der hersteller ausgegeben
             if(flugzeug != null){
-                System.out.println(flugzeug.getNummer() + " " + flugzeug.getHersteller()+ " " + flugzeug.getName());
+                System.out.println(flugzeug.getNummer() + " " + flugzeug.getHersteller());
             }
         }
     }
@@ -121,9 +125,8 @@ public class Menu {
         for(Terminal terminal : App.getALLTerminal()){
             //wenn diese airline nicht null ist geben wird der hersteller ausgegeben
             if(terminal != null){
-                System.out.println(terminal.getName() + " " + terminal.getAirline());
+                System.out.println(terminal.getName());
             }
         }
     }
-
 }
