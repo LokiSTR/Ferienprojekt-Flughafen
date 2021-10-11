@@ -30,6 +30,9 @@ public class Menu {
         System.out.println("(6) Zeige alle Piloten");
         System.out.println("(7) Zeige alle Terminals");
 
+        //Für die Übersicht
+        System.out.println(" ");
+
         System.out.println("(A) Erstelle eine neue Airline");
         System.out.println("(B) Erstelle eine neue Bahn");
         System.out.println("(C) Erstelle eine neue Fluglinie");
