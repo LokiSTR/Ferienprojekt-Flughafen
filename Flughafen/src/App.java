@@ -19,7 +19,7 @@ public class App {
         //Demodaten
 
         //Deklaration der Länge der Arrays
-        _airline = new Airline[25];
+        _airline = new Airline[10];
         //Initialisierung der einzelnen Eigenschaften der Arrays
         _airline [0] = new Airline("Lufthansa");
         _airline [1] = new Airline("Condor");
@@ -27,21 +27,21 @@ public class App {
         _airline [3] = new Airline("Oxford Airlines");
         _airline [4] = new Airline("Ryanair");
 
-        _bahn = new Bahn[10];
+        _bahn = new Bahn[5];
         _bahn [0] = new Bahn("NS");
         _bahn [1] = new Bahn("WO");
 
-        _flughafen = new Flughafen[5];
+        _flughafen = new Flughafen[3];
         _flughafen[0] = new Flughafen("Hamburg Airport", "Hamburg");
 
-        _fluglinie = new Fluglinie[50];
+        _fluglinie = new Fluglinie[10];
         _fluglinie[0] = new Fluglinie("Hamburg - Berlin", _airline[1]);
         _fluglinie[1] = new Fluglinie("Washington DC - Hamburg", _airline[3]);
         _fluglinie[2] = new Fluglinie("Peking - Hamburg", _airline[4]);
         _fluglinie[3] = new Fluglinie("Hamburg - München", _airline[2]);
         _fluglinie[4] = new Fluglinie("Madagaskar - Hamburg", _airline[0]);
 
-        _flugzeug = new Flugzeug[20];
+        _flugzeug = new Flugzeug[10];
         _flugzeug[0] = new Flugzeug("Airbus", "12", _airline[1]);
         _flugzeug[1] = new Flugzeug("Boeing", "89", _airline[4]);
         _flugzeug[2] = new Flugzeug("British Aerospace", "73", _airline[2]);
@@ -50,32 +50,33 @@ public class App {
         _flugzeug[5] = new Flugzeug("Tupolw PSC", "66", _airline[1]);
            
         _passagier = new Passagier[12];
-        _passagier[0] = new Passagier("Reiner", "Schmidt");
-        _passagier[1] = new Passagier("Matilda", "Schmidt");
-        _passagier[2] = new Passagier("Jonas", "Schmidt");
-        _passagier[3] = new Passagier("Mathea", "Schmidt");
-        _passagier[4] = new Passagier("Norbert", "Müller");
-        _passagier[5] = new Passagier("Maria-Katerina", "Müller");
-        _passagier[6] = new Passagier("Maximilian", "Müller");
-        _passagier[7] = new Passagier("Julian", "Schlosser");
-        _passagier[8] = new Passagier("Hulio", "Schlosser");
+        _passagier[0] = new Passagier("Wanda", "Maximoff");
+        _passagier[1] = new Passagier("Vision", "Jarvis");
+        _passagier[2] = new Passagier("Tony", "Stark");
+        _passagier[3] = new Passagier("Steve", "Rogers");
+        _passagier[4] = new Passagier("T´Challa", "Udaku");
+        _passagier[5] = new Passagier("Bruce", "Wayne");
+        _passagier[6] = new Passagier("Alfred", "Hitchcock");
+        _passagier[7] = new Passagier("Peter", "Dinklage");
+        _passagier[8] = new Passagier("Clint", "Eastwood");
 
         _pilot = new Pilot[10];
-        _pilot[0] = new Pilot("Abdul", "Abudallah");
-        _pilot[1] = new Pilot("Ibrahim", "Jasalame");
-        _pilot[2] = new Pilot("Günther", "Jauch");
-        _pilot[3] = new Pilot("Leonardo", "Dexter");
+        _pilot[0] = new Pilot("Alkira", "Leitz");
+        _pilot[1] = new Pilot("Pepper", "Potts");
+        _pilot[2] = new Pilot("Margaret", "Carter");
+        _pilot[3] = new Pilot("Yelena", "Belova");
         _pilot[4] = new Pilot("Loki", "Stormbringer");
-        _pilot[5] = new Pilot("Joachim", "Bödicker");
+        _pilot[5] = new Pilot("Benedict", "Wong");
 
-        _terminal = new Terminal[15];
+        _terminal = new Terminal[8];
         _terminal[0] = new Terminal("(1) Tarek");
         _terminal[1] = new Terminal("(2) Oktavian");
         _terminal[3] = new Terminal("(3) Brutus");
         _terminal[4] = new Terminal("(4) Titus");
         _terminal[5] = new Terminal("(5) Ceasar");
-
+        
         _flug = new Flug[10];
+        _flug[0] = new Flug(_flugzeug[2], _fluglinie[3], _bahn[1],  _passagier[3], _pilot[1],"12:12 Uhr");
         
 
         //Neues Objekt aus der Klasse Menu wird erstellt

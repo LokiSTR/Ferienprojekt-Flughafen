@@ -4,8 +4,8 @@ public class Flug{
     Fluglinie _fluglinie;
     Bahn _bahn;
     //Arraydeklaration
-    //static Pilot[] _pilot;
-    //static Passagier[]  _passagier;
+    Pilot _pilot;
+    Passagier  _passagier;
     //Stringvarible
     String _startzeit;
 
@@ -25,6 +25,12 @@ public class Flug{
     public Bahn getBahn(){
         return _bahn;
     }
+    public Passagier getPassagier() {
+        return _passagier;
+    }
+    public Pilot getPilot() {
+        return _pilot;
+    }
     //Setter (STRG + Leerzeichen = set eingeben)
     //Setter für String
     public void setStartzeit(String startzeit){
@@ -40,19 +46,19 @@ public class Flug{
     public void setBahn(Bahn _bahn) {
         this._bahn = _bahn;
     }
-
-   /* //
-    public static Pilot[] App.getALLPilot(){
-        return _pilot;
+    public void setPassagier(Passagier passagier) {
+        this._passagier = passagier;
     }
-    public static Passagier[] getALLTerminal(){
-        return _terminal;
-    }*/
+    public void setPilot(Pilot pilot) {
+        this._pilot = pilot;
+    }
 
-    public Flug(Flugzeug flugzeug, Fluglinie fluglinie, Bahn bahn, String startzeit){
+    public Flug(Flugzeug flugzeug, Fluglinie fluglinie, Bahn bahn, Passagier passagier, Pilot pilot, String startzeit){
         this.setFlugzeug(flugzeug);
         this.setFluglinie(fluglinie);
         this.setBahn(bahn);
+        this.setPassagier(passagier);
+        this.setPilot(pilot);
         this.setStartzeit(startzeit);
     }
 }
