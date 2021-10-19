@@ -49,7 +49,7 @@ public class App {
         _flugzeug[4] = new Flugzeug("Lockhead", "2", _airline[0]);
         _flugzeug[5] = new Flugzeug("Tupolw PSC", "66", _airline[1]);
            
-        _passagier = new Passagier[150];
+        _passagier = new Passagier[12];
         _passagier[0] = new Passagier("Reiner", "Schmidt");
         _passagier[1] = new Passagier("Matilda", "Schmidt");
         _passagier[2] = new Passagier("Jonas", "Schmidt");

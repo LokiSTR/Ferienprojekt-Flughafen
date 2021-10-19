@@ -279,29 +279,38 @@ public class Menu {
         System.out.println(" ");
     }
 
+    boolean anzahlPassagiere = true;
     public void createPassagierMenu(){
-        //nur print, da danach eine Handlung volzogen werden muss
-        System.out.print("Geben Sie den Vornamen des Passagiers ein:");
-        //hier wird der Name, bzw. der Wert von Hand eingetragen
-        String choiceVorname = getScanner().nextLine();
-        System.out.print("Geben Sie den Nachnamen des Passagiers ein:");
-        String choiceNachname = getScanner().nextLine();
-        //Eintragen des neuen Passagiers in das Array in App
-        App.addPassagier(new Passagier(choiceVorname, choiceNachname));
-        //Bestätigung der Handlung        
-        System.out.println("Es wurde ein neuer Passagier eingetragen");
-        //So kann überprüft werden, ob es auch wirklich funktioniert hat
-        showPassagier();
+        if (Passagier._maxPassagiere > 12){
+            anzahlPassagiere = false;
+        }
+        if (Passagier._maxPassagiere <12){
+            //nur print, da danach eine Handlung volzogen werden muss
+            System.out.print("Geben Sie den Vornamen des Passagiers ein:");
+            //hier wird der Name, bzw. der Wert von Hand eingetragen
+            String choiceVorname = getScanner().nextLine();
+            System.out.print("Geben Sie den Nachnamen des Passagiers ein:");
+            String choiceNachname = getScanner().nextLine();
+            //Eintragen des neuen Passagiers in das Array in App
+            App.addPassagier(new Passagier(choiceVorname, choiceNachname));
+            //Bestätigung der Handlung        
+            System.out.println("Es wurde ein neuer Passagier eingetragen");
+            //So kann überprüft werden, ob es auch wirklich funktioniert hat
+            showPassagier();
+            //Zur Übersicht
+            System.out.println(" ");
+
+            Passagier._maxPassagiere += 1;
+        }
+        System.out.println("Aktuelle Anzahl an Passagieren:" + Passagier._maxPassagiere + "  Maximal mögliche Passagiere: 12");
         //Zur Übersicht
+        System.out.println(" ");
         System.out.println(" ");
     }
 
     boolean anzahlPiloten = true;
-    public void createPilotMenu(){
-        
-        
-        if (Pilot._maxPiloten > 10
-        ){
+    public void createPilotMenu(){        
+        if (Pilot._maxPiloten > 10){
             anzahlPiloten = false;
            // System.out.println("Die maximale Anzahl an Piloten ist erreicht");
         }

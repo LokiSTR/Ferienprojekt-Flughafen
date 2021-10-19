@@ -3,7 +3,6 @@ public class Flugzeug {
     String _nummer;
     String _hersteller;
     Airline _name;
-    int _maxPassagiere;
 
 
     //Konstruktor
@@ -23,9 +22,6 @@ public class Flugzeug {
     public void setName(Airline name) {
         this._name = name;
     }
-    public void setMaxPassagiere(int maxPassagiere) {
-        this._maxPassagiere = maxPassagiere;
-    }
     
 
     //Getter
@@ -37,8 +33,5 @@ public class Flugzeug {
     }
     public Airline getName() {
         return _name;
-    }
-    public int getMaxPassagiere() {
-        return _maxPassagiere;
     }
 }

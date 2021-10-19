@@ -18,9 +18,6 @@ public class Pilot {
     public void setNachname(String nachname) {
         this._nachname = nachname;
     }
-    /*public void setMaxPiloten(int maxPiloten) {
-        this._maxPiloten = maxPiloten;
-    }*/
 
     //Getter
     public String getVorname() {
@@ -28,8 +25,5 @@ public class Pilot {
     }
     public String getNachname() {
         return _nachname;
-    }
-    public static int getMaxPiloten() {
-        return _maxPiloten = 8;
     }
 }

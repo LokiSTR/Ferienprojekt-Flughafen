@@ -2,7 +2,9 @@ public class Passagier {
     //Deklaration der Klassenvariablen
     String _vorname;
     String _nachname;
+    static int _maxPassagiere = 8;
 
+    
     //Konstruktor
     public Passagier(String vorname, String nachname){
         this.setVorname(vorname);
