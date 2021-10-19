@@ -4,7 +4,7 @@ public class Flugzeug {
     String _hersteller;
     Airline _name;
     int _maxPassagiere;
-    int _maxPiloten;
+
 
     //Konstruktor
     public Flugzeug(String hersteller, String nummer, Airline name){
@@ -26,9 +26,7 @@ public class Flugzeug {
     public void setMaxPassagiere(int maxPassagiere) {
         this._maxPassagiere = maxPassagiere;
     }
-    public void setMaxPiloten(int maxPiloten) {
-        this._maxPiloten = maxPiloten;
-    }
+    
 
     //Getter
     public String getNummer() {
@@ -43,7 +41,4 @@ public class Flugzeug {
     public int getMaxPassagiere() {
         return _maxPassagiere;
     }
-    public int getMaxPiloten() {
-        return _maxPiloten;
-    } 
 }

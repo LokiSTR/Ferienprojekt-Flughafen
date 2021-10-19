@@ -40,6 +40,7 @@ public class Menu {
         System.out.println("(E) Erstelle einen neuen Passagier");
         System.out.println("(F) Erstelle einen neuen Piloten");
         System.out.println("(G) Erstelle ein neues Terminal");
+        System.out.println("(I) Erstelle einene neuen Flug");
 
         //Methodenvariable = choice. Eingabe wird zwischengespeichert in Variable Choice
         String choice = getScanner().nextLine();
@@ -94,6 +95,10 @@ public class Menu {
         }
         else if(choice.equals("h")){
             createFlughafen();
+        }
+
+        else if(choice.equals("i")){
+            createFlug();
         }
 
         startMenu();
@@ -291,20 +296,36 @@ public class Menu {
         System.out.println(" ");
     }
 
+    boolean anzahlPiloten = true;
     public void createPilotMenu(){
-        //nur print, da danach eine Handlung volzogen werden muss
-        System.out.print("Geben Sie den Vornamen des Piloten ein:");
-        //hier wird der Name, bzw. der Wert von Hand eingetragen
-        String choiceVorname = getScanner().nextLine();
-        System.out.print("Geben Sie den Nachnamen des Piloten ein:");
-        String choiceNachname = getScanner().nextLine();
-        //Eintragen des neuen Passagiers in das Array in App
-        App.addPilot(new Pilot(choiceVorname, choiceNachname));
-        //Bestätigung der Handlung        
-        System.out.println("Es wurde ein neuer Pilot eingetragen");
-        //So kann überprüft werden, ob es auch wirklich funktioniert hat
-        showPilot();
+        
+        
+        if (Pilot._maxPiloten > 10
+        ){
+            anzahlPiloten = false;
+           // System.out.println("Die maximale Anzahl an Piloten ist erreicht");
+        }
+        if (Pilot._maxPiloten < 10){
+            //nur print, da danach eine Handlung volzogen werden muss
+            System.out.print("Geben Sie den Vornamen des Piloten ein:");            
+            //hier wird der Name, bzw. der Wert von Hand eingetragen
+            String choiceVorname = getScanner().nextLine();
+            System.out.print("Geben Sie den Nachnamen des Piloten ein:");
+            String choiceNachname = getScanner().nextLine();
+            //Eintragen des neuen Passagiers in das Array in App
+            App.addPilot(new Pilot(choiceVorname, choiceNachname));
+            //Bestätigung der Handlung        
+            System.out.println("Es wurde ein neuer Pilot eingetragen");
+            //So kann überprüft werden, ob es auch wirklich funktioniert hat
+            showPilot();
+            //Zur Übersicht
+            System.out.println(" ");
+            
+            Pilot._maxPiloten +=1;
+        }
+        System.out.println("Aktuelle Anzahl an Piloten:" + Pilot._maxPiloten + "  Maximal mögliche Piloten: 10");
         //Zur Übersicht
+        System.out.println(" ");
         System.out.println(" ");
     }
 
@@ -339,4 +360,62 @@ public class Menu {
         //Zur Übersicht
         System.out.println(" ");
     }   
+
+
+
+
+
+    public void createFlug(){       
+        //Index für Auswahl des richtigen Flugzeugs
+        int i = 0;
+        System.out.println("Bitte wähle ein Flugzeug aus: ");
+        // Zuerst null, dann um einen erhöht
+        for(Flugzeug flugzeug : App.getALLFlugzeug()){
+            if(flugzeug != null){
+                System.out.println(i + " - " + flugzeug.getHersteller() + " " + flugzeug.getNummer());
+                i++;
+            }
+        }
+        // Eingabe des Strings
+        String flugzeug_choice = getScanner().next();
+        //String in Integer umwandeln
+        int flugzeug_index = Integer.valueOf(flugzeug_choice);
+        //Ausgabe des Arrays mit den Flugzeugen, eckige Klammern wählen das richtige Element des Arrays
+        System.out.println(App.getALLFlugzeug() [flugzeug_index]);
+       
+        i = 0;
+        //Auswahl der Fluglinie
+        System.out.println("Bitte wähle eine Fluglinie aus: ");
+        for(Fluglinie fluglinie : App.getALLFluglinie()){
+            if(fluglinie != null){
+                System.out.println(i + " - " + fluglinie.getFlugliniename());
+                i++;
+            }
+        }
+        String fluglinie_choice = getScanner().next();
+        int fluglinie_index = Integer.valueOf(fluglinie_choice);
+        System.out.println(App.getALLFluglinie()[fluglinie_index]);
+        
+        i=0;
+        //Auswahl der Bahn
+        System.out.println("Bitte wähle eine Bahn aus: ");
+        for(Bahn bahn : App.getALLBahn()){
+            if(bahn != null){
+                System.out.println(i + " - " + bahn.getName());
+                i++;
+            }
+        }
+        String bahn_choice = getScanner().next();
+        int bahn_index = Integer.valueOf(bahn_choice);
+        System.out.println(App.getALLBahn()[bahn_index]);
+
+        System.out.println("Bitte geben Sie eine Startzeit ein: ");
+        String _startzeit = getScanner().nextLine();
+        
+
+
+        //Hinzufügen in Array
+        App.addFlug(new Flug(App.getALLFlugzeug()[flugzeug_index], App.getALLFluglinie()[fluglinie_index], App.getALLBahn()[bahn_index], _startzeit));
+
+    }
 }

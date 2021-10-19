@@ -16,7 +16,8 @@ public class Passagier {
     public void setNachname(String nachname) {
         this._nachname = nachname;
     }
-
+    
+    
     //Getter
     public String getVorname() {
         return _vorname;

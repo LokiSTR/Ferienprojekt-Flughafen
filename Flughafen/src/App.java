@@ -11,6 +11,7 @@ public class App {
     static Terminal[] _terminal;
     String _startzeit;
 
+    static Flug[] _flug;
 
     //Main-Methode als Einstiegspunkt des Programms
     public static void main(String[] args) throws Exception {
@@ -59,13 +60,13 @@ public class App {
         _passagier[7] = new Passagier("Julian", "Schlosser");
         _passagier[8] = new Passagier("Hulio", "Schlosser");
 
-        _pilot = new Pilot[20];
+        _pilot = new Pilot[10];
         _pilot[0] = new Pilot("Abdul", "Abudallah");
         _pilot[1] = new Pilot("Ibrahim", "Jasalame");
         _pilot[2] = new Pilot("Günther", "Jauch");
         _pilot[3] = new Pilot("Leonardo", "Dexter");
         _pilot[4] = new Pilot("Loki", "Stormbringer");
-        _pilot[5] = new Pilot("Sarah", "Schatte");
+        _pilot[5] = new Pilot("Joachim", "Bödicker");
 
         _terminal = new Terminal[15];
         _terminal[0] = new Terminal("(1) Tarek");
@@ -73,6 +74,9 @@ public class App {
         _terminal[3] = new Terminal("(3) Brutus");
         _terminal[4] = new Terminal("(4) Titus");
         _terminal[5] = new Terminal("(5) Ceasar");
+
+        _flug = new Flug[10];
+        
 
         //Neues Objekt aus der Klasse Menu wird erstellt
         Menu menu = new Menu();
@@ -118,6 +122,11 @@ public class App {
         addObject(terminal, getALLTerminal());
     }
 
+    public static void addFlug(Flug flug){
+        addObject(flug, getAllFluege());
+    }
+    
+
 
     //Rückgabemethode, d.h. die Arrays vom jeweiligen Typen werden zurückgegeben => ermöglicht die arrays
     public static Airline[] getALLAirline(){
@@ -143,6 +152,10 @@ public class App {
     }
     public static Terminal[] getALLTerminal(){
         return _terminal;
+    }
+
+    public static Flug[] getAllFluege(){
+        return _flug;
     }
 
 
