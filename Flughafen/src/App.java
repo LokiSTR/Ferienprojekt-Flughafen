@@ -76,7 +76,7 @@ public class App {
         _terminal[5] = new Terminal("(5) Ceasar");
         
         _flug = new Flug[10];
-        _flug[0] = new Flug(_flugzeug[2], _fluglinie[3], _bahn[1],  _passagier[3], _pilot[1],"12:12 Uhr");
+        
         
 
         //Neues Objekt aus der Klasse Menu wird erstellt

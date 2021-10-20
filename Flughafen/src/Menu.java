@@ -7,10 +7,6 @@ public class Menu {
     //Deklaration des Scanners an sich
     public Scanner _scanner;
 
-    //public ist der Sichtbarkeitsbereichist Passagier ist der Datentyp [] markiert das als Array maxNeun ist der Variablenname 
-    public Passagier[] maxNeun = new Passagier[9];
-
-
     public Menu(){
         setScanner(new Scanner(System.in));   
     }
@@ -435,13 +431,16 @@ public class Menu {
         int anzahlPassagiere = Integer.valueOf(choiceAnzahlPassagiere);
         int aktuellePassagierAnzahl = 0;
     
+        Passagier[] tempPassagiere = new Passagier[200];
+        //public ist der Sichtbarkeitsbereichist Passagier ist der Datentyp [] markiert das als Array maxNeun ist der Variablenname 
+        Passagier[] maxNeun = new Passagier[9];
 
         while(aktuellePassagierAnzahl < anzahlPassagiere){
         
             i=0;
             //Auswahl des Passagiers
             System.out.println("Bitte wähle einen Passagier aus: ");
-            //Passagier ist wieder datentyp, passagier ist der variablenname und getAllPassagier ist eine Methode, deswegen kommen die () da hin
+            //Passagier ist wieder datentyp, passagier ist der variablenname und getAllPassagier ist eine Methode, deswegen kommen die () da hin jedoch verweist diese methode letzten Endes auf ein Array
             for(Passagier passagier : App.getALLPassagier()){
                 if(passagier != null){
                     System.out.println(i + " - " + passagier.getVorname() + " - " + passagier.getNachname());
@@ -449,16 +448,21 @@ public class Menu {
                 }
             }
 
-
+            
             String passagier_choice = getScanner().next();
             int passagier_index = Integer.valueOf(passagier_choice);
             System.out.println(App.getALLPassagier()[passagier_index].getVorname() + " " + App.getALLPassagier()[passagier_index].getNachname());
 
+            
             for(Passagier p : maxNeun){
                 if(p == null){
-                    p=App.getALLPassagier()[passagier_index];
+                    tempPassagiere[aktuellePassagierAnzahl] = p;
+                    
+                    System.out.println(p);
+                    
+                    
                 }
-            } 
+            }
             
 
         aktuellePassagierAnzahl++; 
@@ -466,8 +470,12 @@ public class Menu {
         for(Passagier k : maxNeun){
             if(k != null){
                 System.out.println(k.getVorname());
+                System.out.println("Nach Passagier in Speicher von maxNeun");
             }
         } 
+        
+        System.out.println("Nach Passagier");
+        
 
 
 
@@ -504,7 +512,7 @@ public class Menu {
        
 
         //Hinzufügen in Array
-   //     App.addFlug(new Flug(App.getALLFlugzeug()[flugzeug_index], App.getALLFluglinie()[fluglinie_index], App.getALLBahn()[bahn_index], App.getALLPassagier()[], App.getALLPilot()[], startzeit));
+        App.addFlug(new Flug(App.getALLFlugzeug()[flugzeug_index], App.getALLFluglinie()[fluglinie_index], App.getALLBahn()[bahn_index], tempPassagiere, App.getALLPilot()[], startzeit));
 
 
 

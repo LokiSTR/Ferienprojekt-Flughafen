@@ -4,11 +4,14 @@ public class Flug{
     Fluglinie _fluglinie;
     Bahn _bahn;
     //Arraydeklaration
-    Pilot _pilot;
-    Passagier  _passagier;
+    Pilot[] _pilot;
+    Passagier[]  _passagier;
     //Stringvarible
     String _startzeit;
 
+    public void addPassagier(Passagier p){
+        _passagier[0] = p;
+    }
 
     //Getter (STRG + Leerzeichen = get eingeben)
     //Getter für String
@@ -25,10 +28,10 @@ public class Flug{
     public Bahn getBahn(){
         return _bahn;
     }
-    public Passagier getPassagier() {
+    public Passagier[] getPassagier() {
         return _passagier;
     }
-    public Pilot getPilot() {
+    public Pilot[] getPilot() {
         return _pilot;
     }
     //Setter (STRG + Leerzeichen = set eingeben)
@@ -46,14 +49,14 @@ public class Flug{
     public void setBahn(Bahn _bahn) {
         this._bahn = _bahn;
     }
-    public void setPassagier(Passagier passagier) {
+    public void setPassagier(Passagier[] passagier) {
         this._passagier = passagier;
     }
-    public void setPilot(Pilot pilot) {
+    public void setPilot(Pilot[] pilot) {
         this._pilot = pilot;
     }
 
-    public Flug(Flugzeug flugzeug, Fluglinie fluglinie, Bahn bahn, Passagier passagier, Pilot pilot, String startzeit){
+    public Flug(Flugzeug flugzeug, Fluglinie fluglinie, Bahn bahn, Passagier[] passagier, Pilot[] pilot, String startzeit){
         this.setFlugzeug(flugzeug);
         this.setFluglinie(fluglinie);
         this.setBahn(bahn);
