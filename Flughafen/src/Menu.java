@@ -70,7 +70,9 @@ public class Menu {
         else if(choice.equals("8")){
             showFlughafen();
         }
-
+        else if(choice.equals("9")){
+            showFlug();
+        }
         //Eingabeaufforderung zum Erstellen der jeweiligen Komponenten
         else if(choice.equals("a")){
             createAirlineMenu();
@@ -180,6 +182,16 @@ public class Menu {
             //wenn diese airline nicht null ist geben wird der hersteller ausgegeben
             if(flughafen!= null){
                 System.out.println(flughafen.getName());
+            }
+        }
+    }
+
+    public void showFlug(){
+        //foreach schleife
+        for(Flug flug : App.getAllFluege()){
+            //wenn diese airline nicht null ist geben wird der hersteller ausgegeben
+            if(flug != null){
+                System.out.println(flug.getFlugzeug().getHersteller() + " " + flug.getFlugzeug().getNummer() + " " + flug.getFluglinie().getFlugliniename() + " " +  flug.getBahn().getName() + " " +  flug.getPassagier() + " " +  flug.getPilot() + " " +  flug.getStartzeit());
             }
         }
     }
@@ -431,8 +443,8 @@ public class Menu {
         int anzahlPassagiere = Integer.valueOf(choiceAnzahlPassagiere);
         int aktuellePassagierAnzahl = 0;
     
-        Passagier[] tempPassagiere = new Passagier[200];
-        //public ist der Sichtbarkeitsbereichist Passagier ist der Datentyp [] markiert das als Array maxNeun ist der Variablenname 
+
+        //public ist der Sichtbarkeitsbereich, wenn man ncihts davor schreibt ist das Array automatisch public, Passagier ist der Datentyp [] markiert das als Array maxNeun ist der Variablenname 
         Passagier[] maxNeun = new Passagier[9];
 
         while(aktuellePassagierAnzahl < anzahlPassagiere){
@@ -449,28 +461,28 @@ public class Menu {
             }
 
             
-            String passagier_choice = getScanner().next();
-            int passagier_index = Integer.valueOf(passagier_choice);
-            System.out.println(App.getALLPassagier()[passagier_index].getVorname() + " " + App.getALLPassagier()[passagier_index].getNachname());
+        String passagier_choice = getScanner().next();
+        int passagier_index = Integer.valueOf(passagier_choice);
+        System.out.println(App.getALLPassagier()[passagier_index].getVorname() + " " + App.getALLPassagier()[passagier_index].getNachname());
 
             
-            for(Passagier p : maxNeun){
-                if(p == null){
-                    tempPassagiere[aktuellePassagierAnzahl] = p;
-                    
-                    System.out.println(p);
-                    
-                    
-                }
-            }
             
-
+            
+        maxNeun[aktuellePassagierAnzahl] = App.getALLPassagier()[passagier_index];
         aktuellePassagierAnzahl++; 
         }
+ /*       for(Passagier pas : maxNeun){
+            if(pas == null){
+                maxNeun[aktuellePassagierAnzahl] = pas;
+                
+                System.out.println(pas);
+                
+                
+            }
+        }*/
         for(Passagier k : maxNeun){
             if(k != null){
-                System.out.println(k.getVorname());
-                System.out.println("Nach Passagier in Speicher von maxNeun");
+                System.out.println(k.getVorname() + " " + k.getNachname());
             }
         } 
         
@@ -486,6 +498,8 @@ public class Menu {
         int anzahlPiloten = Integer.valueOf(choiceAnzahlPiloten);
         int aktuellePilotenAnzahl = 0;
 
+
+        Pilot[] maxFuenf = new Pilot[5];
         while(aktuellePilotenAnzahl < anzahlPiloten){
             i=0;
             //Auswahl des Piloten
@@ -499,12 +513,29 @@ public class Menu {
             String pilot_choice = getScanner().next();
             int pilot_index = Integer.valueOf(pilot_choice);
             System.out.println(App.getALLPilot()[pilot_index].getVorname() + " " + App.getALLPilot()[pilot_index].getNachname());
+
+        
+        maxFuenf[aktuellePilotenAnzahl] = App.getALLPilot()[pilot_index];
         aktuellePilotenAnzahl++;
+        }
+
+        for(Pilot p : maxFuenf){
+            if(p == null){
+                maxFuenf[aktuellePilotenAnzahl] = p;
+                
+                System.out.println(p);
+                
+                
+            }
+        }
+        for(Pilot x : maxFuenf){
+            if(x != null){
+                System.out.println(x.getVorname() + " " + x.getNachname());
+            }
         }
 
         System.out.print("Bitte geben Sie eine Startzeit ein: ");
         String startzeit = getScanner().nextLine(); 
-     //   System.out.println("Geben Sie den Standort des Flughafens ein:");
         String choicedatum = getScanner().nextLine();
         System.out.println("Ihre gewählte Startuhrzeit ist: " + choicedatum);
         System.out.println(" ");
@@ -512,20 +543,21 @@ public class Menu {
        
 
         //Hinzufügen in Array
-        App.addFlug(new Flug(App.getALLFlugzeug()[flugzeug_index], App.getALLFluglinie()[fluglinie_index], App.getALLBahn()[bahn_index], tempPassagiere, App.getALLPilot()[], startzeit));
+        App.addFlug(new Flug(App.getALLFlugzeug()[flugzeug_index], App.getALLFluglinie()[fluglinie_index], App.getALLBahn()[bahn_index], maxNeun, maxFuenf, startzeit));
 
 
 
 
-       // System.out.println( fluglinie_choice + flugzeug_choice + bahn_choice + startzeit);
+       // System.out.println([flugzeug_index] + " " + [fluglinie_index] + " " + [bahn_index] + " " + maxNeun + " " + maxFuenf + " " + startzeit);
     
         
 
-    }
-    public void setMaxNeun(Passagier[] maxNeun) {
+        
+ /*   public void setMaxNeun(Passagier[] maxNeun) {
         this.maxNeun = maxNeun;
     }
     public Passagier[] getMaxNeun() {
         return maxNeun;
+    }*/
     }
 }
